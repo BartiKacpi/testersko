@@ -107,6 +107,7 @@ nav ul li a {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    min-height: 300px;
 }
 
 .article-content {
@@ -145,10 +146,11 @@ thead {
 }
 
 /* RESPONSYWNOŚĆ */
+
+/* Dla ekranów o szerokości do 768px */
 @media (max-width: 768px) {
     #main-layout {
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
+        grid-template-columns: 1fr;  /* Lewy panel nad treścią */
     }
 
     #sidebar {
@@ -160,6 +162,7 @@ thead {
     }
 }
 
+/* Dla ekranów o szerokości do 480px */
 @media (max-width: 480px) {
     #navbar ul {
         display: block;
