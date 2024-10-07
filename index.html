@@ -1,21 +1,21 @@
-<button id="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+<!-- Zmieniłem główne sekcje dla lepszej responsywności -->
+<main>
+    <section id="main-layout">
+        <section id="content">
+            <article id="article1" class="article-content active">
+                <h2>Nowości: Odkrycia o lwach</h2>
+                <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
+            </article>
 
-<div id="sidebar" class="sidebar">
-    <h2>Kategorie</h2>
-    <button onclick="filterArticles('news')">Nowości</button>
-    <button onclick="filterArticles('guides')">Poradniki</button>
-    <button onclick="filterArticles('reviews')">Recenzje</button>
+            <article id="article2" class="article-content">
+                <h2>Poradnik: Jak obserwować tygrysy w naturze</h2>
+                <p>Tygrysy są jednymi z najbardziej fascynujących dzikich zwierząt, a ich obserwacja w naturalnym środowisku może być niezapomnianym przeżyciem...</p>
+            </article>
 
-    <h2>Ostatnie Artykuły</h2>
-    <ul id="article-list">
-        <li><a href="#" onclick="displayArticle('article1')">Nowości: Odkrycia o lwach</a></li>
-        <li><a href="#" onclick="displayArticle('article2')">Poradnik: Jak obserwować tygrysy w naturze</a></li>
-        <li><a href="#" onclick="displayArticle('article3')">Recenzja: Dokument "Władcy Dżungli"</a></li>
-    </ul>
-
-    <h2>Popularne Artykuły</h2>
-    <ul>
-        <li><a href="#">Najpopularniejszy Artykuł: Życie Tygrysów</a></li>
-        <li><a href="#">Lwy w Kulturze – Fascynujące Fakty</a></li>
-    </ul>
-</div>
+            <article id="article3" class="article-content">
+                <h2>Recenzja: Dokument "Władcy Dżungli"</h2>
+                <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
+            </article>
+        </section>
+    </section>
+</main>
