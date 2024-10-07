@@ -29,8 +29,4 @@ function loadMoreArticles() {
     let newArticle = document.createElement('div');
     newArticle.classList.add('article');
     newArticle.innerHTML = `
-        <h3>Nowy Tytuł</h3>
-        <p>Treść nowego artykułu...</p>
-    `;
-    document.getElementById('articles').insertBefore(newArticle, document.getElementById('loadMore'));
-}
+        <h3>Nowe Odkrycia
