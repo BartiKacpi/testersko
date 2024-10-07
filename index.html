@@ -3,39 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prosta strona generująca pasywny dochód z reklam">
-    <title>Moja Strona</title>
+    <meta name="description" content="Strona z artykułami generującymi pasywny dochód z reklam">
+    <title>Moja Strona z Artykułami</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Witamy na Mojej Stronie</h1>
-        <nav>
+        <nav id="navbar">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#articles">Artykuły</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#categories">Kategorie</a></li>
+                <li><a href="#popular">Popularne</a></li>
+                <li><a href="#sitemap">Mapa strony</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="search">
+            <input type="text" id="searchInput" placeholder="Wyszukaj artykuły..." onkeyup="searchArticles()">
+        </section>
+
+        <section id="categories">
+            <h2>Kategorie</h2>
+            <button onclick="filterArticles('news')">Nowości</button>
+            <button onclick="filterArticles('guides')">Poradniki</button>
+            <button onclick="filterArticles('reviews')">Recenzje</button>
+        </section>
+
         <section id="articles">
             <h2>Ostatnie Artykuły</h2>
-            <article>
-                <h3>Tytuł artykułu 1</h3>
-                <p>To jest przykładowy artykuł. Wkrótce pojawią się tu aktualne treści!</p>
-            </article>
-            <article>
-                <h3>Tytuł artykułu 2</h3>
-                <p>To jest kolejny przykładowy artykuł. Zapraszamy do śledzenia nowych wpisów.</p>
-            </article>
+            <div class="article" data-category="news">
+                <h3>Tytuł Nowości 1</h3>
+                <p>Treść artykułu 1...</p>
+            </div>
+            <div class="article" data-category="guides">
+                <h3>Tytuł Poradnika 1</h3>
+                <p>Treść artykułu 2...</p>
+            </div>
+            <div class="article" data-category="reviews">
+                <h3>Tytuł Recenzji 1</h3>
+                <p>Treść artykułu 3...</p>
+            </div>
+            <button id="loadMore" onclick="loadMoreArticles()">Załaduj więcej</button>
+        </section>
+
+        <section id="popular">
+            <h2>Popularne Artykuły</h2>
+            <ul>
+                <li><a href="#">Najpopularniejszy Artykuł 1</a></li>
+                <li><a href="#">Najpopularniejszy Artykuł 2</a></li>
+            </ul>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Moja Strona - Wszelkie prawa zastrzeżone.</p>
-        <p><a href="#contact">Skontaktuj się z nami</a></p>
+        <section id="sitemap">
+            <h2>Mapa Strony</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Kategorie</a></li>
+                <li><a href="#popular">Popularne</a></li>
+            </ul>
+        </section>
+
+        <section id="data">
+            <h2>Tabela Danych</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kolumna 1</th>
+                        <th>Kolumna 2</th>
+                        <th>Kolumna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dane 1</td>
+                        <td>Dane 2</td>
+                        <td>Dane 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
