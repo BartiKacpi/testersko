@@ -3,29 +3,27 @@ function toggleSidebar() {
     let toggleBtn = document.getElementById('toggle-btn');
 
     sidebar.classList.toggle('open');
-    
+
     if (sidebar.classList.contains('open')) {
-        toggleBtn.innerHTML = '&times;';  // Zmiana na "X" po otwarciu panelu
+        toggleBtn.innerHTML = '&times;';
     } else {
-        toggleBtn.innerHTML = '&#9776;';  // Powrót do "hamburgera" po zamknięciu
+        toggleBtn.innerHTML = '&#9776;';
     }
 }
 
 function displayArticle(articleId) {
     let articles = document.getElementsByClassName('article-content');
-
     for (let i = 0; i < articles.length; i++) {
-        articles[i].style.display = 'none';
+        articles[i].classList.remove('active');
     }
-
-    document.getElementById(articleId).style.display = 'block';
+    document.getElementById(articleId).classList.add('active');
 }
 
 function updateVisitCount() {
-    let visitCount = localStorage.getItem('visitCount') || 0;
-    visitCount++;
-    localStorage.setItem('visitCount', visitCount);
-    document.getElementById('visitCount').innerText = visitCount;
+    let count = localStorage.getItem('visitCount') || 0;
+    count++;
+    localStorage.setItem('visitCount', count);
+    document.getElementById('visitCount').innerText = count;
 }
 
 window.onload = function() {
