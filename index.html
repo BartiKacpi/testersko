@@ -27,9 +27,11 @@
 
         <section id="categories">
             <h2>Kategorie</h2>
-            <button onclick="filterArticles('news')">Nowości</button>
-            <button onclick="filterArticles('guides')">Poradniki</button>
-            <button onclick="filterArticles('reviews')">Recenzje</button>
+            <div id="menu">
+                <button onclick="filterArticles('news')">Nowości</button>
+                <button onclick="filterArticles('guides')">Poradniki</button>
+                <button onclick="filterArticles('reviews')">Recenzje</button>
+            </div>
         </section>
 
         <section id="articles">
@@ -40,4 +42,51 @@
             </div>
             <div class="article" data-category="guides">
                 <h3>Poradnik: Jak obserwować tygrysy w naturze</h3>
-                <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami...</p
+                <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami...</p>
+            </div>
+            <div class="article" data-category="reviews">
+                <h3>Recenzja: Dokument "Władcy Dżungli"</h3>
+                <p>Recenzja nowego dokumentu przyrodniczego o tygrysach...</p>
+            </div>
+            <button id="loadMore" onclick="loadMoreArticles()">Załaduj więcej</button>
+        </section>
+
+        <section id="popular">
+            <h2>Popularne Artykuły</h2>
+            <ul>
+                <li><a href="#">Najpopularniejszy Artykuł: Życie Tygrysów</a></li>
+                <li><a href="#">Lwy w Kulture – Fascynujące Fakty</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <section id="sitemap">
+            <h2>Mapa Strony</h2>
+            <div class="sitemap-links">
+                <a href="#home">Home</a> | 
+                <a href="#categories">Kategorie</a> | 
+                <a href="#popular">Popularne</a>
+            </div>
+        </section>
+
+        <section id="data">
+            <h2>Licznik Odwiedzin</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Liczba odwiedzin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="visitCount"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
