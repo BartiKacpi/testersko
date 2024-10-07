@@ -29,4 +29,21 @@ function loadMoreArticles() {
     let newArticle = document.createElement('div');
     newArticle.classList.add('article');
     newArticle.innerHTML = `
-        <h3>Nowe Odkrycia
+        <h3>Nowe Odkrycia o Tygrysach</h3>
+        <p>Najnowsze informacje o zwyczajach tygrysów...</p>
+    `;
+    document.getElementById('articles').insertBefore(newArticle, document.getElementById('loadMore'));
+}
+
+function updateVisitCount() {
+    if (localStorage.getItem('visitCount')) {
+        let visitCount = parseInt(localStorage.getItem('visitCount')) + 1;
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('visitCount').innerText = visitCount;
+    } else {
+        localStorage.setItem('visitCount', 1);
+        document.getElementById('visitCount').innerText = 1;
+    }
+}
+
+window.onload = updateVisitCount;
