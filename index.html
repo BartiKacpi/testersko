@@ -21,34 +21,36 @@
     </header>
 
     <main>
-        <section id="search">
-            <input type="text" id="searchInput" placeholder="Wyszukaj artykuły o lwach i tygrysach..." onkeyup="searchArticles()">
-        </section>
-
-        <section id="categories">
-            <h2>Kategorie</h2>
-            <div id="menu">
+        <section id="grid-layout">
+            <aside id="menu">
+                <h2>Kategorie</h2>
                 <button onclick="filterArticles('news')">Nowości</button>
                 <button onclick="filterArticles('guides')">Poradniki</button>
                 <button onclick="filterArticles('reviews')">Recenzje</button>
-            </div>
-        </section>
+            </aside>
 
-        <section id="articles">
-            <h2>Ostatnie Artykuły</h2>
-            <div class="article" data-category="news">
-                <h3><a href="#">Nowości: Odkrycia o lwach</a></h3>
-                <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych na ich migracje...</p>
-            </div>
-            <div class="article" data-category="guides">
-                <h3><a href="#">Poradnik: Jak obserwować tygrysy w naturze</a></h3>
-                <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami w ich naturalnym środowisku. Jak zadbać o swoje bezpieczeństwo i zminimalizować zakłócanie życia dzikiej przyrody...</p>
-            </div>
-            <div class="article" data-category="reviews">
-                <h3><a href="#">Recenzja: Dokument "Władcy Dżungli"</a></h3>
-                <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego ich życie w sercu indyjskiej dżungli. Film skupia się na codziennych wyzwaniach tych majestatycznych kotów...</p>
-            </div>
-            <button id="loadMore" onclick="loadMoreArticles()">Załaduj więcej</button>
+            <section id="articles">
+                <h2>Ostatnie Artykuły</h2>
+                <div class="article" data-category="news">
+                    <h3><a href="#">Nowości: Odkrycia o lwach</a></h3>
+                    <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
+                </div>
+                <div class="article" data-category="guides">
+                    <h3><a href="#">Poradnik: Jak obserwować tygrysy w naturze</a></h3>
+                    <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami w ich naturalnym środowisku...</p>
+                </div>
+                <div class="article" data-category="reviews">
+                    <h3><a href="#">Recenzja: Dokument "Władcy Dżungli"</a></h3>
+                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
+                </div>
+                <button id="loadMore" onclick="loadMoreArticles()">Załaduj więcej</button>
+            </section>
+
+            <aside id="ads">
+                <h2>Reklamy</h2>
+                <div class="ad-space">Miejsce na Twoją reklamę</div>
+                <div class="ad-space">Miejsce na Twoją reklamę</div>
+            </aside>
         </section>
 
         <section id="popular">
@@ -71,7 +73,6 @@
         </section>
 
         <section id="data">
-            <h2>Licznik Odwiedzin</h2>
             <table>
                 <thead>
                     <tr>
