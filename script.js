@@ -1,11 +1,16 @@
+function toggleSidebar() {
+    let sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open'); // Przełącza klasę "open", aby wysunąć lub schować panel
+}
+
 function displayArticle(articleId) {
     let articles = document.getElementsByClassName('article-content');
 
     for (let i = 0; i < articles.length; i++) {
-        articles[i].style.display = 'none';
+        articles[i].classList.remove('active'); // Usuwa klasę "active" ze wszystkich artykułów
     }
 
-    document.getElementById(articleId).style.display = 'block';
+    document.getElementById(articleId).classList.add('active'); // Dodaje klasę "active" do wybranego artykułu
 }
 
 function updateVisitCount() {
