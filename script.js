@@ -29,7 +29,7 @@ function loadMoreArticles() {
     let newArticle = document.createElement('div');
     newArticle.classList.add('article');
     newArticle.innerHTML = `
-        <h3>Nowe Odkrycia o Tygrysach</h3>
+        <h3><a href="#">Nowe Odkrycia o Tygrysach</a></h3>
         <p>Najnowsze informacje o zwyczajach tygrysów...</p>
     `;
     document.getElementById('articles').insertBefore(newArticle, document.getElementById('loadMore'));
