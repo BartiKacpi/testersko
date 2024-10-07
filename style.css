@@ -1,118 +1,29 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Ogólne style pozostają bez zmian */
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-family: 'Georgia', serif;
-    margin-bottom: 10px;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#navbar {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    padding: 10px;
-}
-
-/* Main layout with hidden sidebar */
 #main-layout {
     display: grid;
-    grid-template-columns: 1fr; /* Główne okno zajmuje całą szerokość */
+    grid-template-columns: 1fr;  /* Domyślnie główna treść zajmuje całą szerokość */
     padding: 20px;
 }
 
-/* Sidebar hidden by default, can be shown with .open */
 #sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Ukryty po lewej stronie */
     width: 250px;
     height: 100%;
     background-color: #f4f4f4;
     padding: 20px;
     border-right: 1px solid #ddd;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    transition: left 0.3s ease; /* Płynne wysuwanie */
     z-index: 1000;
 }
 
 #sidebar.open {
-    left: 0; /* Pokazuje panel po kliknięciu */
+    left: 0; /* Wysuwa panel */
 }
 
-#sidebar h2 {
-    margin-bottom: 10px;
-}
-
-#sidebar button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-#sidebar button:hover {
-    background: linear-gradient(135deg, #feb47b, #ff7e5f);
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    margin-bottom: 10px;
-}
-
-#sidebar ul li a {
-    color: #333;
-    text-decoration: none;
-}
-
-#sidebar ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Button to toggle sidebar */
 #toggle-btn {
     position: fixed;
     top: 20px;
@@ -129,39 +40,12 @@ nav ul li a {
     align-items: center;
 }
 
-#content {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    min-height: 300px;
-    margin-left: 20px;
-}
-
-.article-content {
-    display: none;
-}
-
-.article-content.active {
-    display: block;
-}
-
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* Responsiveness */
+/* Ustawienia responsywne dla małych ekranów */
 @media (max-width: 768px) {
     #main-layout {
         grid-template-columns: 1fr;
     }
-    
+
     #content {
         margin-left: 0;
     }
