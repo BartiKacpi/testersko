@@ -1,21 +1,86 @@
-<!-- Zmieniłem główne sekcje dla lepszej responsywności -->
-<main>
-    <section id="main-layout">
-        <section id="content">
-            <article id="article1" class="article-content active">
-                <h2>Nowości: Odkrycia o lwach</h2>
-                <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
-            </article>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strona poświęcona lwom i tygrysom">
+    <title>Królestwo Lwów i Tygrysów</title>
 
-            <article id="article2" class="article-content">
-                <h2>Poradnik: Jak obserwować tygrysy w naturze</h2>
-                <p>Tygrysy są jednymi z najbardziej fascynujących dzikich zwierząt, a ich obserwacja w naturalnym środowisku może być niezapomnianym przeżyciem...</p>
-            </article>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Królestwo Lwów i Tygrysów</h1>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Kategorie</a></li>
+                <li><a href="#popular">Popularne</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <article id="article3" class="article-content">
-                <h2>Recenzja: Dokument "Władcy Dżungli"</h2>
-                <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
-            </article>
+    <!-- Dodanie przycisku wysuwania panelu na małych ekranach -->
+    <button id="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <main>
+        <section id="main-layout">
+            <aside id="sidebar">
+                <h2>Kategorie</h2>
+                <button onclick="filterArticles('news')">Nowości</button>
+                <button onclick="filterArticles('guides')">Poradniki</button>
+                <button onclick="filterArticles('reviews')">Recenzje</button>
+
+                <h2>Ostatnie Artykuły</h2>
+                <ul id="article-list">
+                    <li><a href="#" onclick="displayArticle('article1')">Nowości: Odkrycia o lwach</a></li>
+                    <li><a href="#" onclick="displayArticle('article2')">Poradnik: Jak obserwować tygrysy w naturze</a></li>
+                    <li><a href="#" onclick="displayArticle('article3')">Recenzja: Dokument "Władcy Dżungli"</a></li>
+                </ul>
+                
+                <h2>Popularne Artykuły</h2>
+                <ul>
+                    <li><a href="#">Najpopularniejszy Artykuł: Życie Tygrysów</a></li>
+                    <li><a href="#">Lwy w Kulturze – Fascynujące Fakty</a></li>
+                </ul>
+            </aside>
+
+            <section id="content">
+                <article id="article1" class="article-content">
+                    <h2>Nowości: Odkrycia o lwach</h2>
+                    <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
+                </article>
+
+                <article id="article2" class="article-content" style="display: none;">
+                    <h2>Poradnik: Jak obserwować tygrysy w naturze</h2>
+                    <p>Tygrysy są jednymi z najbardziej fascynujących dzikich zwierząt, a ich obserwacja w naturalnym środowisku może być niezapomnianym przeżyciem. Oto, jak przygotować się do safari i bezpiecznie obserwować te wielkie koty w ich naturalnym habitacie...</p>
+                </article>
+
+                <article id="article3" class="article-content" style="display: none;">
+                    <h2>Recenzja: Dokument "Władcy Dżungli"</h2>
+                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów w dzikiej dżungli. Film ukazuje codzienne wyzwania tych niesamowitych zwierząt...</p>
+                </article>
+            </section>
         </section>
-    </section>
-</main>
+    </main>
+
+    <footer>
+        <section id="data">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Liczba odwiedzin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="visitCount"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
