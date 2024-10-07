@@ -20,10 +20,14 @@ function displayArticle(articleId) {
 }
 
 function updateVisitCount() {
-    let count = localStorage.getItem('visitCount') || 0;
-    count++;
-    localStorage.setItem('visitCount', count);
-    document.getElementById('visitCount').innerText = count;
+    // Używamy CountAPI do zwiększenia i pobrania liczby odwiedzin
+    fetch('https://api.countapi.xyz/hit/bartikacpi/wejscia')
+        .then(response => response.json())  // Otrzymujemy odpowiedź w formacie JSON
+        .then(data => {
+            // Wyświetlamy aktualną liczbę odwiedzin
+            document.getElementById('visitCount').innerText = data.value;
+        })
+        .catch(error => console.error('Błąd w pobieraniu danych:', error));
 }
 
 window.onload = function() {
