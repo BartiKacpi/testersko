@@ -143,3 +143,43 @@ thead {
     background-color: #333;
     color: #fff;
 }
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+    #main-layout {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+
+    #sidebar {
+        grid-column: 1 / span 1;
+    }
+
+    #content {
+        grid-column: 1 / span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    #sidebar h2 {
+        font-size: 16px;
+    }
+
+    #sidebar button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #content {
+        font-size: 14px;
+    }
+}
