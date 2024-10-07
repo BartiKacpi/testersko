@@ -15,63 +15,46 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#categories">Kategorie</a></li>
                 <li><a href="#popular">Popularne</a></li>
-                <li><a href="#sitemap">Mapa strony</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="grid-layout">
-            <aside id="menu">
+        <section id="main-layout">
+            <aside id="sidebar">
                 <h2>Kategorie</h2>
                 <button onclick="filterArticles('news')">Nowości</button>
                 <button onclick="filterArticles('guides')">Poradniki</button>
                 <button onclick="filterArticles('reviews')">Recenzje</button>
-            </aside>
 
-            <section id="articles">
                 <h2>Ostatnie Artykuły</h2>
-                <div class="article" data-category="news">
-                    <h3><a href="#">Nowości: Odkrycia o lwach</a></h3>
-                    <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
-                </div>
-                <div class="article" data-category="guides">
-                    <h3><a href="#">Poradnik: Jak obserwować tygrysy w naturze</a></h3>
-                    <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami w ich naturalnym środowisku...</p>
-                </div>
-                <div class="article" data-category="reviews">
-                    <h3><a href="#">Recenzja: Dokument "Władcy Dżungli"</a></h3>
-                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
-                </div>
-                <button id="loadMore" onclick="loadMoreArticles()">Załaduj więcej</button>
-            </section>
-
-            <aside id="ads">
-                <h2>Reklamy</h2>
-                <div class="ad-space">Miejsce na Twoją reklamę</div>
-                <div class="ad-space">Miejsce na Twoją reklamę</div>
+                <ul id="article-list">
+                    <li><a href="#" onclick="displayArticle('article1')">Nowości: Odkrycia o lwach</a></li>
+                    <li><a href="#" onclick="displayArticle('article2')">Poradnik: Jak obserwować tygrysy w naturze</a></li>
+                    <li><a href="#" onclick="displayArticle('article3')">Recenzja: Dokument "Władcy Dżungli"</a></li>
+                </ul>
             </aside>
-        </section>
 
-        <section id="popular">
-            <h2>Popularne Artykuły</h2>
-            <ul>
-                <li><a href="#">Najpopularniejszy Artykuł: Życie Tygrysów</a></li>
-                <li><a href="#">Lwy w Kulturze – Fascynujące Fakty</a></li>
-            </ul>
+            <section id="content">
+                <article id="article1" class="article-content">
+                    <h2>Nowości: Odkrycia o lwach</h2>
+                    <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
+                </article>
+
+                <article id="article2" class="article-content" style="display: none;">
+                    <h2>Poradnik: Jak obserwować tygrysy w naturze</h2>
+                    <p>Praktyczne porady dotyczące safari i bezpiecznego kontaktu z tygrysami w ich naturalnym środowisku...</p>
+                </article>
+
+                <article id="article3" class="article-content" style="display: none;">
+                    <h2>Recenzja: Dokument "Władcy Dżungli"</h2>
+                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
+                </article>
+            </section>
         </section>
     </main>
 
     <footer>
-        <section id="sitemap">
-            <h2>Mapa Strony</h2>
-            <div class="sitemap-links">
-                <a href="#home">Home</a> | 
-                <a href="#categories">Kategorie</a> | 
-                <a href="#popular">Popularne</a>
-            </div>
-        </section>
-
         <section id="data">
             <table>
                 <thead>
