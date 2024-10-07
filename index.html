@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Strona poświęcona lwom i tygrysom">
     <title>Królestwo Lwów i Tygrysów</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,11 +19,10 @@
         </nav>
     </header>
 
-    <!-- Dodanie przycisku wysuwania panelu na małych ekranach -->
     <button id="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
 
     <main>
-        <section id="main-layout">
+        <div id="main-layout">
             <aside id="sidebar">
                 <h2>Kategorie</h2>
                 <button onclick="filterArticles('news')">Nowości</button>
@@ -32,7 +30,7 @@
                 <button onclick="filterArticles('reviews')">Recenzje</button>
 
                 <h2>Ostatnie Artykuły</h2>
-                <ul id="article-list">
+                <ul>
                     <li><a href="#" onclick="displayArticle('article1')">Nowości: Odkrycia o lwach</a></li>
                     <li><a href="#" onclick="displayArticle('article2')">Poradnik: Jak obserwować tygrysy w naturze</a></li>
                     <li><a href="#" onclick="displayArticle('article3')">Recenzja: Dokument "Władcy Dżungli"</a></li>
@@ -46,22 +44,22 @@
             </aside>
 
             <section id="content">
-                <article id="article1" class="article-content">
+                <article id="article1" class="article-content active">
                     <h2>Nowości: Odkrycia o lwach</h2>
                     <p>Najnowsze badania dotyczące zachowań lwów w Afryce, skupiające się na ich socjalnych relacjach i wpływie zmian klimatycznych...</p>
                 </article>
 
-                <article id="article2" class="article-content" style="display: none;">
+                <article id="article2" class="article-content">
                     <h2>Poradnik: Jak obserwować tygrysy w naturze</h2>
-                    <p>Tygrysy są jednymi z najbardziej fascynujących dzikich zwierząt, a ich obserwacja w naturalnym środowisku może być niezapomnianym przeżyciem. Oto, jak przygotować się do safari i bezpiecznie obserwować te wielkie koty w ich naturalnym habitacie...</p>
+                    <p>Tygrysy są jednymi z najbardziej fascynujących dzikich zwierząt, a ich obserwacja w naturalnym środowisku może być niezapomnianym przeżyciem...</p>
                 </article>
 
-                <article id="article3" class="article-content" style="display: none;">
+                <article id="article3" class="article-content">
                     <h2>Recenzja: Dokument "Władcy Dżungli"</h2>
-                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów w dzikiej dżungli. Film ukazuje codzienne wyzwania tych niesamowitych zwierząt...</p>
+                    <p>Recenzja nowego dokumentu przyrodniczego o tygrysach, przedstawiającego życie tych majestatycznych kotów...</p>
                 </article>
             </section>
-        </section>
+        </div>
     </main>
 
     <footer>
