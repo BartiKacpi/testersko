@@ -1,25 +1,194 @@
-/* Dodane już media queries do mniejszych ekranów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    padding: 10px;
+}
+
+/* Main layout with hidden sidebar */
+#main-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 20px;
+}
+
+/* Sidebar hidden by default, can be shown with .open */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar.open {
+    left: 0; /* Pokazuje panel po kliknięciu */
+}
+
+#sidebar h2 {
+    margin-bottom: 10px;
+}
+
+#sidebar button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sidebar button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Button to toggle sidebar */
+#toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 300px;
+    margin-left: 20px;
+}
+
+.article-content {
+    display: none;
+}
+
+.article-content.active {
+    display: block;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
     #sidebar {
-        width: 200px;
+        left: -250px;
+        width: 250px;
+        transition: left 0.3s ease;
+        position: fixed;
+    }
+
+    #sidebar.open {
+        left: 0;
     }
 
     #toggle-btn {
-        top: 10px;
-        left: 10px;
+        display: block;
     }
-    
+
     #main-layout {
         grid-template-columns: 1fr;
     }
 
     #content {
         margin-left: 0;
-        padding: 15px;
+        padding: 20px;
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #navbar ul li {
-        display: block;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 }
