@@ -1,13 +1,13 @@
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open'); // Przełącza klasę "open", aby wysunąć lub schować panel
+    sidebar.classList.toggle('open');  // Przełącza klasę "open", aby pokazać lub schować panel
 }
 
 function displayArticle(articleId) {
     let articles = document.getElementsByClassName('article-content');
 
     for (let i = 0; i < articles.length; i++) {
-        articles[i].classList.remove('active'); // Usuwa klasę "active" ze wszystkich artykułów
+        articles[i].classList.remove('active'); // Usuwa klasę "active" z każdego artykułu
     }
 
     document.getElementById(articleId).classList.add('active'); // Dodaje klasę "active" do wybranego artykułu
