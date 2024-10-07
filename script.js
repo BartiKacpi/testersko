@@ -26,11 +26,23 @@ function filterArticles(category) {
 }
 
 function loadMoreArticles() {
+    let articleTitles = [
+        "Nowe odkrycia w badaniach nad lwami",
+        "Tygrysy na wolności: wyzwania i ochrona",
+        "Recenzja: film 'Królestwo Kotów'"
+    ];
+    let articleDescriptions = [
+        "Lwy mają unikalne zachowania społeczne. Badania pokazują, że...",
+        "Tygrysy są zagrożone, ale istnieją liczne inicjatywy...",
+        "Film 'Królestwo Kotów' przedstawia niesamowite sceny życia dzikich..."
+    ];
+    let randomIndex = Math.floor(Math.random() * articleTitles.length);
+
     let newArticle = document.createElement('div');
     newArticle.classList.add('article');
     newArticle.innerHTML = `
-        <h3><a href="#">Nowe Odkrycia o Tygrysach</a></h3>
-        <p>Najnowsze informacje o zwyczajach tygrysów...</p>
+        <h3><a href="#">${articleTitles[randomIndex]}</a></h3>
+        <p>${articleDescriptions[randomIndex]}</p>
     `;
     document.getElementById('articles').insertBefore(newArticle, document.getElementById('loadMore'));
 }
