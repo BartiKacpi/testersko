@@ -44,27 +44,26 @@ nav ul li a {
     padding: 10px;
 }
 
-main {
+/* Main layout */
+#main-layout {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 20px;
     padding: 20px;
 }
 
-h2 {
-    margin-bottom: 15px;
-    font-family: 'Georgia', serif;
+#sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Grid layout */
-#grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 20px;
+#sidebar h2 {
+    margin-bottom: 10px;
 }
 
-#menu {
-    grid-column: 1;
-}
-
-#menu button {
+#sidebar button {
     display: block;
     width: 100%;
     text-align: left;
@@ -79,55 +78,52 @@ h2 {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-#menu button:hover {
+#sidebar button:hover {
     background: linear-gradient(135deg, #feb47b, #ff7e5f);
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-#articles {
-    grid-column: 2;
+#sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
-#ads {
-    grid-column: 3;
+#sidebar ul li {
+    margin-bottom: 10px;
 }
 
-.ad-space {
-    background-color: #ddd;
+#sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    background-color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    text-align: center;
-    color: #555;
 }
 
-/* Wyszukiwarka */
-#search input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    transition: border 0.3s ease;
+.article-content {
+    display: none;
 }
 
-#search input:focus {
-    border-color: #ff7e5f;
-    outline: none;
+.article-content.active {
+    display: block;
 }
 
-/* Mapa strony */
-.sitemap-links {
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
     text-align: center;
     font-size: 14px;
-}
-
-.sitemap-links a {
-    color: #ff7e5f;
-    text-decoration: none;
-    margin-right: 15px;
 }
 
 table {
