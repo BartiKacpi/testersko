@@ -1,27 +1,35 @@
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');  // Przełącza klasę "open", aby pokazać lub schować panel
+    let toggleButton = document.getElementById('toggle-btn');
+
+    sidebar.classList.toggle('open');
+    if (sidebar.classList.contains('open')) {
+        toggleButton.innerHTML = '&times;';  // Zmienia przycisk na "X" po otwarciu panelu
+    } else {
+        toggleButton.innerHTML = '&#9776;';  // Zmienia przycisk z powrotem na ikonkę hamburgera
+    }
 }
 
 function displayArticle(articleId) {
     let articles = document.getElementsByClassName('article-content');
 
     for (let i = 0; i < articles.length; i++) {
-        articles[i].classList.remove('active'); // Usuwa klasę "active" z każdego artykułu
+        articles[i].classList.remove('active');
     }
 
-    document.getElementById(articleId).classList.add('active'); // Dodaje klasę "active" do wybranego artykułu
+    document.getElementById(articleId).classList.add('active');
 }
 
 function updateVisitCount() {
-    if (localStorage.getItem('visitCount')) {
-        let visitCount = parseInt(localStorage.getItem('visitCount')) + 1;
-        localStorage.setItem('visitCount', visitCount);
-        document.getElementById('visitCount').innerText = visitCount;
-    } else {
-        localStorage.setItem('visitCount', 1);
-        document.getElementById('visitCount').innerText = 1;
-    }
+    let visitCountElement = document.getElementById('visitCount');
+    let visitCount = localStorage.getItem('visitCount') ? parseInt(localStorage.getItem('visitCount')) : 0;
+    
+    visitCount++;
+    localStorage.setItem('visitCount', visitCount);
+    visitCountElement.innerText = visitCount;
 }
 
-window.onload = updateVisitCount;
+// Uruchomienie licznika wizyt po załadowaniu strony
+window.onload = function() {
+    updateVisitCount();
+};
