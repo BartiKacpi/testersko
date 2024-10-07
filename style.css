@@ -44,20 +44,30 @@ nav ul li a {
     padding: 10px;
 }
 
-/* Main layout */
+/* Main layout with hidden sidebar */
 #main-layout {
     display: grid;
-    grid-template-columns: 20% 80%;
-    grid-gap: 20px;
+    grid-template-columns: 1fr; /* Główne okno zajmuje całą szerokość */
     padding: 20px;
 }
 
+/* Sidebar hidden by default, can be shown with .open */
 #sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
     background-color: #f4f4f4;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar.open {
+    left: 0; /* Pokazuje panel po kliknięciu */
 }
 
 #sidebar h2 {
@@ -102,12 +112,30 @@ nav ul li a {
     text-decoration: underline;
 }
 
+/* Button to toggle sidebar */
+#toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #content {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     min-height: 300px;
+    margin-left: 20px;
 }
 
 .article-content {
@@ -128,61 +156,13 @@ footer {
     font-size: 14px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-thead {
-    background-color: #333;
-    color: #fff;
-}
-
-/* RESPONSYWNOŚĆ */
-
-/* Dla ekranów o szerokości do 768px */
+/* Responsiveness */
 @media (max-width: 768px) {
     #main-layout {
-        grid-template-columns: 1fr;  /* Lewy panel nad treścią */
+        grid-template-columns: 1fr;
     }
-
-    #sidebar {
-        grid-column: 1 / span 1;
-    }
-
+    
     #content {
-        grid-column: 1 / span 1;
-    }
-}
-
-/* Dla ekranów o szerokości do 480px */
-@media (max-width: 480px) {
-    #navbar ul {
-        display: block;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-
-    #sidebar h2 {
-        font-size: 16px;
-    }
-
-    #sidebar button {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #content {
-        font-size: 14px;
+        margin-left: 0;
     }
 }
