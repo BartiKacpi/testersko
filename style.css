@@ -1,52 +1,25 @@
-/* Ogólne style pozostają bez zmian */
-
-#main-layout {
-    display: grid;
-    grid-template-columns: 1fr;  /* Domyślnie główna treść zajmuje całą szerokość */
-    padding: 20px;
-}
-
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Ukryty po lewej stronie */
-    width: 250px;
-    height: 100%;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease; /* Płynne wysuwanie */
-    z-index: 1000;
-}
-
-#sidebar.open {
-    left: 0; /* Wysuwa panel */
-}
-
-#toggle-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1100;
-    font-size: 24px;
-    cursor: pointer;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Ustawienia responsywne dla małych ekranów */
+/* Dodane już media queries do mniejszych ekranów */
 @media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    #toggle-btn {
+        top: 10px;
+        left: 10px;
+    }
+    
     #main-layout {
         grid-template-columns: 1fr;
     }
 
     #content {
         margin-left: 0;
+        padding: 15px;
+    }
+
+    #navbar ul li {
+        display: block;
+        margin: 5px 0;
     }
 }
