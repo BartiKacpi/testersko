@@ -1,12 +1,13 @@
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
-    let toggleButton = document.getElementById('toggle-btn');
+    let toggleBtn = document.getElementById('toggle-btn');
 
     sidebar.classList.toggle('open');
+    
     if (sidebar.classList.contains('open')) {
-        toggleButton.innerHTML = '&times;';  // Zmienia przycisk na "X" po otwarciu panelu
+        toggleBtn.innerHTML = '&times;';  // Zmiana na "X" po otwarciu panelu
     } else {
-        toggleButton.innerHTML = '&#9776;';  // Zmienia przycisk z powrotem na ikonkę hamburgera
+        toggleBtn.innerHTML = '&#9776;';  // Powrót do "hamburgera" po zamknięciu
     }
 }
 
@@ -14,22 +15,19 @@ function displayArticle(articleId) {
     let articles = document.getElementsByClassName('article-content');
 
     for (let i = 0; i < articles.length; i++) {
-        articles[i].classList.remove('active');
+        articles[i].style.display = 'none';
     }
 
-    document.getElementById(articleId).classList.add('active');
+    document.getElementById(articleId).style.display = 'block';
 }
 
 function updateVisitCount() {
-    let visitCountElement = document.getElementById('visitCount');
-    let visitCount = localStorage.getItem('visitCount') ? parseInt(localStorage.getItem('visitCount')) : 0;
-    
+    let visitCount = localStorage.getItem('visitCount') || 0;
     visitCount++;
     localStorage.setItem('visitCount', visitCount);
-    visitCountElement.innerText = visitCount;
+    document.getElementById('visitCount').innerText = visitCount;
 }
 
-// Uruchomienie licznika wizyt po załadowaniu strony
 window.onload = function() {
     updateVisitCount();
 };
