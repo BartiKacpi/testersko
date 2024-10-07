@@ -65,6 +65,26 @@ nav ul li a {
     margin-bottom: 15px;
 }
 
+#sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+}
+
 #content {
     background-color: white;
     padding: 20px;
@@ -91,24 +111,4 @@ footer {
 /* Responsiveness */
 @media (max-width: 768px) {
     #main-layout {
-        grid-template-columns: 1fr;
-    }
-
-    #toggle-btn {
-        display: block;
-    }
-
-    #sidebar {
-        position: fixed;
-        left: -250px;
-        top: 0;
-        width: 250px;
-        height: 100%;
-        transition: left 0.3s ease;
-        z-index: 1000;
-    }
-
-    #sidebar.open {
-        left: 0;
-    }
-}
+        grid-template-columns:
