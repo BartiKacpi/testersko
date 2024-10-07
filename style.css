@@ -111,4 +111,24 @@ footer {
 /* Responsiveness */
 @media (max-width: 768px) {
     #main-layout {
-        grid-template-columns:
+        grid-template-columns: 1fr;
+    }
+
+    #toggle-btn {
+        display: block;
+    }
+
+    #sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    #sidebar.open {
+        left: 0;
+    }
+}
