@@ -64,7 +64,10 @@ nav ul li a {
 #sidebar h2 {
     margin-bottom: 15px;
 }
-
+.carousel-item{
+    width: 300px;
+    height: 200px;
+}
 #sidebar button {
     display: block;
     width: 100%;
