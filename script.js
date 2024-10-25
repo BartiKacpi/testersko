@@ -33,3 +33,4 @@ function updateVisitCount() {
 window.onload = function() {
     updateVisitCount();
 };
+
